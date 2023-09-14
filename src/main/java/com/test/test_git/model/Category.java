@@ -1,4 +1,4 @@
-package com.model;
+package com.test.test_git.model;
 
 public class Category {
     
