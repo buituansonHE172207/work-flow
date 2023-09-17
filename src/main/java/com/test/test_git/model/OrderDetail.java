@@ -18,7 +18,7 @@ import lombok.ToString;
 @AllArgsConstructor
 @Data
 @Builder
-@Table(name = "author")
+@Table(name = "order_detail")
 @Entity
 public class OrderDetail {
 
@@ -43,3 +43,4 @@ public class OrderDetail {
 
     private int unitPrice;
 }
+

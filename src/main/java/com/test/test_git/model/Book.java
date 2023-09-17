@@ -15,6 +15,7 @@ import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -50,8 +51,6 @@ public class Book {
 
     @Lob
     private String description;
-
-    private String image;
 
     private Integer stock;
 
@@ -105,4 +104,9 @@ public class Book {
     @EqualsAndHashCode.Exclude
     @ToString.Exclude
     private Set<Rating> ratings; // Cascade: Remove (Deleting a Book deletes associated Ratings)
+
+    @OneToMany(mappedBy = "book", cascade = CascadeType.REMOVE)
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    private Set<Image> images;
 }
