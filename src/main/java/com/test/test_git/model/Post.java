@@ -1,5 +1,7 @@
 package com.test.test_git.model;
 
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -46,4 +48,6 @@ public class Post {
     private String content;
     
     private String brief;
+
+    private LocalDateTime createdAt;
 }
